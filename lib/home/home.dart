@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../editor/editor.dart';
+
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key, required this.title});
 
@@ -35,6 +37,16 @@ class _MyHomePageState extends State<MyHomePage> {
               '$_counter',
               style: Theme.of(context).textTheme.headline4,
             ),
+            FloatingActionButton(
+              onPressed: () {
+                Navigator.pushReplacement(
+                  context,
+                  MaterialPageRoute(builder: (context) => EditorPage())
+                );
+              },
+              heroTag: "btn2",
+              child: const Icon(Icons.edit),
+            )
           ],
         ),
       ),
