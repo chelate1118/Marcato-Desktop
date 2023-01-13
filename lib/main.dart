@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:marcato/theme/theme_color.dart';
 
-import 'home.dart';
+import 'home/home.dart';
 
 void main() {
   runApp(const MyApp());
 }
 
-@visibleForTesting
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
@@ -25,9 +25,8 @@ void _onCreate() {
 Widget _buildWidget(BuildContext context) {
   return MaterialApp(
     title: 'Flutter Demo',
-    theme: ThemeData(
-      primarySwatch: Colors.blue,
-    ),
+    theme: currentThemeData,
+    debugShowCheckedModeBanner: false,
     home: const MyHomePage(title: 'Flutter Demo Home Page'),
   );
 }
